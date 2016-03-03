@@ -9,7 +9,7 @@
 console.log('=======  内部迭代器 begin  ======');
 var each = function(ary,callback) {
     for(var i = 0, l = ary.length; i < l; i++) {
-        callback.call(ary[i], i, ary[i]); //把下标和元素当作参数传给callback函数
+        if(callback.call(ary[i], i, ary[i])) return true; //把下标和元素当作参数传给callback函数
     }
 }
 each([1, 2, 3, 4], function(i, n) {
@@ -28,19 +28,20 @@ console.log('=======  内部迭代器比较两数组是否相等 begin  ======')
 var compare = function(arry1, arry2) {
     if(arry1.length !== arry2.length) {
         console.log('两个数组长度不相等');
-        return;
+        return true;
     }
-    each(arry1, function(i, n) {
+   var isSave= each(arry1, function(i, n) {
         if(n !== arry2[i]) {
             console.log('两个数组的值不相等');
-            return;
+            return true;
         }
     });
+    if(isSave) return;
     console.log('两个数组相等');
 }
 compare([1,2,3,4], [1,2,3]);
 compare([1,2,3,4], [1,2,3,5]);
-compare([1,2,3,4], [1,2,3,4]);
+
 console.log('=======  内部迭代器比较两数组是否相等 end  ======\n\r');
 console.log('\n\r');
 console.log('\n\r');
