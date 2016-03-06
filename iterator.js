@@ -18,7 +18,6 @@ each([1, 2, 3, 4], function(i, n) {
 console.log('=======  内部迭代器 end  ======\n\r');
 console.log('\n\r');
 console.log('\n\r');
-
 /*
 * 使用内部迭代器来比较两数组是否相等
 * @param arry1 第一个传入的比较数组
