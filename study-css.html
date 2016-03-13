@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css study</title>
+    <style type="text/css">
+        #triangle-right {
+            width: 0;
+            height: 0;
+            border-top: 50px solid transparent;
+            border-left: 100px solid red;
+            border-bottom: 50px solid transparent;
+        }
+        #curvedarrow {
+            position: relative;
+            width: 0;
+            height: 0;
+            border-top: 9px solid transparent;
+            border-right: 9px solid red;
+            -webkit-transform: rotate(10deg);
+        }
+        #curvedarrow::after {
+            content: "";
+            position: absolute;
+            border: 0 solid transparent;
+            border-top: 3px solid red;
+            border-radius: 20px 0 0 0;
+            top: -12px;
+            left: -9px;
+            width: 12px;
+            height: 12px;
+            -webkit-transform: rotate(45deg);
+        }
+        #magnifying-glass {
+            font-size: 2em;
+            display: inline-block;
+            width: 0.4em;
+            height: 0.4em;
+            border: 0.1em solid red;
+            position: relative;
+            border-radius: 0.35em;
+        }
+        #magnifying-glass::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            width: 0.35em;
+            height: 0.08em;
+            right: -0.25em;
+            bottom: -0.1em;
+            border-width: 0;
+            background: red;
+            -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                        -o-transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="triangle-right"></div>
+    <div id="curvedarrow"></div>
+    <div id="magnifying-glass"></div>
+</body>
+</html>
