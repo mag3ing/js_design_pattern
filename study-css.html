@@ -55,11 +55,44 @@
                     -ms-transform: rotate(45deg);
                         -o-transform: rotate(45deg);
         }
+        .yinyang{
+            width: 96px;
+            height: 48px;
+            position: relative;
+            background-color: #eee;
+            border-color: red;
+            border-radius: 100%;
+            border-width: 2px 2px 50px 2px;
+            border-style: solid;
+        }
+        .yinyang::before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            background-color: #eee;
+            border: 18px solid red;
+            width: 12px;
+            height: 12px;
+            border-radius: 100%;
+        }
+        .yinyang::after{
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border: 18px solid #eee;
+            background-color: red;
+            border-radius: 100%;
+            top: 50%;
+            left: 50%;
+        }
     </style>
 </head>
 <body>
     <div id="triangle-right"></div>
     <div id="curvedarrow"></div>
     <div id="magnifying-glass"></div>
+    <div class="yinyang"></div>
 </body>
 </html>
